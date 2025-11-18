@@ -18,9 +18,9 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    // Create axios instance with base URL
+    // Create axios instance with base URL - UPDATED FOR PRODUCTION
     const api = axios.create({
-        baseURL: 'http://localhost:5000/api',
+        baseURL: 'https://your-app.up.railway.app/api',
     })
 
     useEffect(() => {

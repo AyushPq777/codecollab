@@ -17,8 +17,8 @@ export const SocketProvider = ({ children }) => {
     const [isConnected, setIsConnected] = useState(false)
 
     useEffect(() => {
-        // Connect to backend
-        const newSocket = io('http://localhost:5000', {
+        // Connect to backend - UPDATED FOR PRODUCTION
+        const newSocket = io('https://your-app.up.railway.app', {
             transports: ['websocket', 'polling']
         })
 
