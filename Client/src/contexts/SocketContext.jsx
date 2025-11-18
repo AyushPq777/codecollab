@@ -17,7 +17,6 @@ export const SocketProvider = ({ children }) => {
     const [isConnected, setIsConnected] = useState(false)
 
     useEffect(() => {
-        // UPDATED WITH YOUR RAILWAY DOMAIN
         const newSocket = io('https://codecollab-production-b446.up.railway.app', {
             transports: ['websocket', 'polling']
         })
@@ -50,7 +49,7 @@ export const SocketProvider = ({ children }) => {
     }
 
     return (
-        <SocketContext.Provider value={value}>
+        < SocketContext.Provider value={value}>
             {children}
         </SocketContext.Provider>
     )

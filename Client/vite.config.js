@@ -7,14 +7,12 @@ export default defineConfig({
   })],
   server: {
     port: 3000,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true
-      }
-    }
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: false
+  }
 })
