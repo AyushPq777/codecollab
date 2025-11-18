@@ -4,7 +4,6 @@ import axios from 'axios'
 
 const AuthContext = createContext()
 
-// Custom hook must be defined outside the provider
 export const useAuth = () => {
     const context = useContext(AuthContext)
     if (!context) {
@@ -13,14 +12,13 @@ export const useAuth = () => {
     return context
 }
 
-// Create the provider component
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    // Create axios instance with base URL - UPDATED FOR PRODUCTION
+    // UPDATED WITH YOUR RAILWAY DOMAIN
     const api = axios.create({
-        baseURL: 'https://your-app.up.railway.app/api',
+        baseURL: 'https://codecollab-production-b446.up.railway.app/api',
     })
 
     useEffect(() => {
@@ -31,14 +29,12 @@ export const AuthProvider = ({ children }) => {
         try {
             const token = localStorage.getItem('token')
             if (token) {
-                // Set authorization header for this specific request
                 const response = await api.get('/auth/me', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
                 })
                 setUser(response.data.data.user)
-                // Set default header for future requests
                 api.defaults.headers.common['Authorization'] = `Bearer ${token}`
             }
         } catch (error) {
@@ -116,5 +112,4 @@ export const AuthProvider = ({ children }) => {
     )
 }
 
-// Named export for the context itself (optional)
 export { AuthContext }

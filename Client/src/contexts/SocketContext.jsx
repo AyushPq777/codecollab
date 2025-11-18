@@ -17,8 +17,8 @@ export const SocketProvider = ({ children }) => {
     const [isConnected, setIsConnected] = useState(false)
 
     useEffect(() => {
-        // Connect to backend - UPDATED FOR PRODUCTION
-        const newSocket = io('https://your-app.up.railway.app', {
+        // UPDATED WITH YOUR RAILWAY DOMAIN
+        const newSocket = io('https://codecollab-production-b446.up.railway.app', {
             transports: ['websocket', 'polling']
         })
 
