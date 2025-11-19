@@ -22,7 +22,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+        origin: ["http://localhost:3000", "http://127.0.0.1:3000", "https://codecollab-mtyy42pot-aayush-goyals-projects.vercel.app"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true
     }
@@ -31,7 +31,7 @@ const io = new Server(server, {
 // Security middleware
 app.use(helmet());
 app.use(cors({
-    origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+    origin: ["http://localhost:3000", "http://127.0.0.1:3000", "https://codecollab-mtyy42pot-aayush-goyals-projects.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }))
