@@ -17,7 +17,8 @@ export const SocketProvider = ({ children }) => {
     const [isConnected, setIsConnected] = useState(false)
 
     useEffect(() => {
-        const newSocket = io('https://codecollab-production-b446.up.railway.app', {
+        // ✅ UPDATE THIS URL to your Render backend
+        const newSocket = io('https://your-render-backend-url.onrender.com', {
             transports: ['websocket', 'polling']
         })
 
@@ -49,7 +50,7 @@ export const SocketProvider = ({ children }) => {
     }
 
     return (
-        < SocketContext.Provider value={value}>
+        <SocketContext.Provider value={value}>
             {children}
         </SocketContext.Provider>
     )
