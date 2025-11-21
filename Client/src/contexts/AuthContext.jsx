@@ -16,8 +16,9 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
+    // ✅ UPDATE THIS URL to your Render backend
     const api = axios.create({
-        baseURL: 'https://codecollab-production-b446.up.railway.app/api',
+        baseURL: 'https://your-render-backend-url.onrender.com/api',
     })
 
     useEffect(() => {
