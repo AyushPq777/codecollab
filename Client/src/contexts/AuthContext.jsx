@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     // ✅ UPDATE THIS URL to your Render backend
     const api = axios.create({
-        baseURL: 'https://your-render-backend-url.onrender.com/api',
+        baseURL: 'https://codecollab-server-4id0.onrender.com/api',
     })
 
     useEffect(() => {
