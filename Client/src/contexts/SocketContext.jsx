@@ -18,7 +18,7 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         // ✅ UPDATE THIS URL to your Render backend
-        const newSocket = io('https://your-render-backend-url.onrender.com', {
+        const newSocket = io('https://codecollab-server-4id0.onrender.com', {
             transports: ['websocket', 'polling']
         })
 
